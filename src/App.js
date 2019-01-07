@@ -26,7 +26,7 @@ class App extends Component {
       guess,
       allGuesses: [...prevState.allGuesses, guess],
       attempt: this.state.attempt + 1
-    }));
+    })); 
   }
 
   resetGame = () => {
