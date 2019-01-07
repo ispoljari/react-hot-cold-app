@@ -2,7 +2,10 @@ import React from 'react';
 
 const Form = () => {
   return (
-    <h2>Form Component</h2>
+    <form>
+      <input type="number" required/>
+      <button type="button">Guess</button>
+    </form>
   );
 }
 
