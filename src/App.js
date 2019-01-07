@@ -12,11 +12,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      randomNumber: this.generateRandomNumber()
+      randomNumber: this.generateRandomNumber(),
+      guess: undefined
     }
   }
 
   generateRandomNumber = () => Math.floor(Math.random()*100) + 1;
+
+  updateGuess = guess => {
+    this.setState({
+      guess
+    });
+  }
 
   render() {
     return (
@@ -25,8 +32,8 @@ class App extends Component {
           <Banner />
         </header>
         <main role="main">
-          <Feedback />
-          <Form />
+          <Feedback currentGuess={this.state.guess}/>
+          <Form returnNumberToApp={value => this.updateGuess(value)}/>
           <Progress />
           <Reset />
           <Info />
