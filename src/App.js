@@ -42,7 +42,7 @@ class App extends Component {
           <Feedback guess={this.state.guess} actual={this.state.actual}/>
           <Form returnGuessToApp={value => this.updateGuess(value)}/>
           <Progress />
-          <Reset resetGame = {() => this.resetGame()}/>
+          <Reset resetGame = {() => this.resetGame}/>
           <Info />
         </main>
       </div>
