@@ -1,8 +1,16 @@
 import React from 'react';
 
 const Info = () => {
+  const toggleInfo = () => {
+    //something
+  }
+
   return (
-    <h2>Info Component</h2>
+    <div>
+      <button type="button" onClick={toggleInfo()}>
+        How To Play
+      </button>
+    </div>
   );
 }
 
