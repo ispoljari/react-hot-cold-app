@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Progress = () => {
+const Progress = props => {
   return (
-    <h2>Progress Component</h2>
+    <h2>Guess #{props.attempt}</h2>
   );
 }
 

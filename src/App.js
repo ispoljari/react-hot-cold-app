@@ -13,7 +13,8 @@ class App extends Component {
     super(props);
     this.state = {
       actual: this.generateRandomNumber(),
-      guess: undefined
+      guess: undefined,
+      attempt: 0
     }
   }
 
@@ -21,14 +22,16 @@ class App extends Component {
 
   updateGuess = guess => {
     this.setState({
-      guess
+      guess,
+      attempt: this.state.attempt + 1
     });
   }
 
   resetGame = () => {
     this.setState({
       actual: this.generateRandomNumber(),
-      guess: undefined
+      guess: undefined,
+      attempt: 0
     });
   }
 
@@ -41,7 +44,7 @@ class App extends Component {
         <main role="main">
           <Feedback guess={this.state.guess} actual={this.state.actual}/>
           <Form returnGuessToApp={value => this.updateGuess(value)}/>
-          <Progress />
+          <Progress attempt={this.state.attempt}/>
           <Reset resetGame = {() => this.resetGame}/>
           <Info />
         </main>
