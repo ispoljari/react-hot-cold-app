@@ -5,7 +5,7 @@ const Feedback = props => {
     const absDiff = Math.abs(props.guess - props.actual)
 
     if (absDiff === 0) {
-      return 'You Won!';
+      return 'You Won! Click reset to play again.';
     } else if (absDiff < 4) {
       return 'Extremely Hot!';
     } else if (absDiff >= 4 && absDiff < 10) {
@@ -14,6 +14,8 @@ const Feedback = props => {
       return 'Warm';
     } else if (absDiff >=20 ) {
       return 'Cold';
+    } else {
+      return 'Make your guess!'
     }
   }
 
