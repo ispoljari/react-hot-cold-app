@@ -4,7 +4,7 @@ const Form = props => {
   const onSubmit = e => {
     e.preventDefault();
     const guess = e.target.elements.guess.value;
-    props.returnNumberToApp(guess);
+    props.returnGuessToApp(guess);
   }
 
 

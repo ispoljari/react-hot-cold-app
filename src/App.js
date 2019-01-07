@@ -25,6 +25,13 @@ class App extends Component {
     });
   }
 
+  resetGame = () => {
+    this.setState({
+      actual: this.generateRandomNumber(),
+      guess: undefined
+    });
+  }
+
   render() {
     return (
       <div>
@@ -33,9 +40,9 @@ class App extends Component {
         </header>
         <main role="main">
           <Feedback guess={this.state.guess} actual={this.state.actual}/>
-          <Form returnNumberToApp={value => this.updateGuess(value)}/>
+          <Form returnGuessToApp={value => this.updateGuess(value)}/>
           <Progress />
-          <Reset />
+          <Reset resetGame = {() => this.resetGame()}/>
           <Info />
         </main>
       </div>
