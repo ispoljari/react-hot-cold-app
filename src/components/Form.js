@@ -1,10 +1,17 @@
 import React from 'react';
 
 const Form = () => {
+  const onSubmit = e => {
+    e.preventDefault();
+    const guessedNumber = e.target.elements.guess.value;
+    console.log(guessedNumber);
+  }
+
+
   return (
-    <form>
-      <input type="number" required/>
-      <button type="button">Guess</button>
+    <form onSubmit={e => onSubmit(e)}>
+      <input type="number" name="guess" required/>
+      <button type="submit">Guess</button>
     </form>
   );
 }
