@@ -3,8 +3,8 @@ import React from 'react';
 const Form = props => {
   const onSubmit = e => {
     e.preventDefault();
-    const guessedNumber = e.target.elements.guess.value;
-    props.returnNumberToApp(guessedNumber);
+    const guess = e.target.elements.guess.value;
+    props.returnNumberToApp(guess);
   }
 
 
