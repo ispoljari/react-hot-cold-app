@@ -10,7 +10,7 @@ const Form = props => {
 
   return (
     <form onSubmit={e => onSubmit(e)}>
-      <input type="number" name="guess" required/>
+      <input type="number" name="guess" min="1" max="100" required/>
       <button type="submit">Guess</button>
     </form>
   );
