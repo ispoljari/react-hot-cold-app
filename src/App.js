@@ -9,11 +9,20 @@ import Info from './components/Info';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      randomNumber: this.generateRandomNumber()
+    }
+  }
+
+  generateRandomNumber = () => Math.floor(Math.random()*100) + 1;
+
   render() {
     return (
       <div>
         <Banner />
-        <Feedback />
+        <Feedback randNum = {this.state.randomNumber}/>
         <Form />
         <Progress />
         <Reset />

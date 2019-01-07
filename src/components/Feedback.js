@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Feedback = () => {
+const Feedback = props => {
   return (
-    <h2>Feedback Component</h2>
+    <div>
+      <h2>Feedback Component</h2>
+      <p>{props.randNum}</p>
+    </div>
   );
 }
 
