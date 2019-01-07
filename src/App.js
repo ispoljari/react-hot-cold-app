@@ -21,12 +21,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Banner />
-        <Feedback randNum = {this.state.randomNumber}/>
-        <Form />
-        <Progress />
-        <Reset />
-        <Info />
+        <header role="banner">
+          <Banner />
+        </header>
+        <main role="main">
+          <Feedback />
+          <Form />
+          <Progress />
+          <Reset />
+          <Info />
+        </main>
       </div>
     );
   }
