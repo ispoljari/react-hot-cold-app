@@ -5,6 +5,7 @@ import Form from './components/Form';
 import Progress from './components/Progress';
 import Reset from './components/Reset';
 import Info from './components/Info';
+import Author from './components/Author';
 
 import './App.css';
 
@@ -93,6 +94,9 @@ class App extends Component {
               <Reset resetGame = {() => this.resetGame}/>
               <Info />
             </main>
+            <footer role="contentinfo">
+              <Author />
+            </footer>
           </div>
         </div>
       </div>
