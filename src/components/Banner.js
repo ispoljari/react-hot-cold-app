@@ -1,8 +1,9 @@
 import React from 'react';
+import './Banner.css';
 
 const Banner = () => {
   return (
-    <h1 className="text-center">HOT OR COLD</h1>
+    <h1 className="text-center banner">HOT OR COLD</h1>
   );
 }
 
