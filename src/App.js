@@ -6,6 +6,7 @@ import Progress from './components/Progress';
 import Reset from './components/Reset';
 import Info from './components/Info';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends Component {
