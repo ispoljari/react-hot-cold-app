@@ -1,0 +1,9 @@
+.feedback {
+  border-radius: 5px;
+  padding: 4px;
+  background-color: #ea4335;
+}
+
+.feedback__value {
+  margin-top: 10px;
+}
