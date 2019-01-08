@@ -88,7 +88,7 @@ class App extends Component {
             </header>
             <main role="main">
               <Feedback feedback={this.state.feedback}/>
-              <Form returnGuessToApp={value => this.updateGuess(value)}/>
+              <Form block = {this.state.block} returnGuessToApp={value => this.updateGuess(value)}/>
               <Progress attempt={this.state.attempt} guess={this.state.guess} guessList={guessList}/>
               <Reset resetGame = {() => this.resetGame}/>
               <Info />

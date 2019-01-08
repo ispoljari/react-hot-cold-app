@@ -5,10 +5,12 @@ const Form = props => {
   const onSubmit = e => {
     e.preventDefault();
 
-    const guess = e.target.elements.guess.value;
-    e.target.elements.guess.value = ''; // Clear input field after submit
-
-    props.returnGuessToApp(guess);
+    if (!props.block) {
+      const guess = e.target.elements.guess.value;
+      e.target.elements.guess.value = ''; // Clear input field after submit
+  
+      props.returnGuessToApp(guess);
+    }
   }
   
   return (
