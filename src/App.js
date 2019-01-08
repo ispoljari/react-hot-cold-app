@@ -47,17 +47,21 @@ class App extends Component {
     );
 
     return (
-      <div>
-        <header role="banner">
-          <Banner />
-        </header>
-        <main role="main">
-          <Feedback guess={this.state.guess} actual={this.state.actual}/>
-          <Form returnGuessToApp={value => this.updateGuess(value)}/>
-          <Progress attempt={this.state.attempt} guess={this.state.guess} guessList={guessList}/>
-          <Reset resetGame = {() => this.resetGame}/>
-          <Info />
-        </main>
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12">
+            <header role="banner">
+              <Banner />
+            </header>
+            <main role="main">
+              <Feedback guess={this.state.guess} actual={this.state.actual}/>
+              <Form returnGuessToApp={value => this.updateGuess(value)}/>
+              <Progress attempt={this.state.attempt} guess={this.state.guess} guessList={guessList}/>
+              <Reset resetGame = {() => this.resetGame}/>
+              <Info />
+            </main>
+          </div>
+        </div>
       </div>
     );
   }

@@ -21,7 +21,7 @@ const Feedback = props => {
 
   return (
     <div>
-      <h2>{updateFeedback()}</h2>
+      <h2 className="text-center">{updateFeedback()}</h2>
     </div>
   );
 }

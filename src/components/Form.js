@@ -11,9 +11,9 @@ const Form = props => {
   }
   
   return (
-    <form onSubmit={e => onSubmit(e)}>
-      <input type="number" name="guess" min="1" max="100" required/>
-      <button type="submit">Guess</button>
+    <form className="text-center" onSubmit={e => onSubmit(e)}>
+      <input className="form-control" type="number" name="guess" min="1" max="100" required/>
+      <button className="btn btn-primary btn-block guess"type="submit">Guess</button>
     </form>
   );
 }

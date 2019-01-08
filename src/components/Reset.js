@@ -2,8 +2,8 @@ import React from 'react';
 
 const Reset = props => {
   return (
-    <div>
-      <button type="button" onClick={props.resetGame()}>
+    <div className="text-center reset">
+      <button className="btn btn-success btn-block" type="button" onClick={props.resetGame()}>
         Reset Game
       </button>
     </div>

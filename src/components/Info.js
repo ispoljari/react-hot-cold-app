@@ -6,8 +6,8 @@ const Info = () => {
   }
 
   return (
-    <div>
-      <button type="button" onClick={toggleInfo()}>
+    <div className="text-center info">
+      <button className="btn btn-info btn-block" type="button" onClick={toggleInfo()}>
         How To Play
       </button>
     </div>

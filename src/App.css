@@ -1,0 +1,10 @@
+main,
+header {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.info,
+.guess {
+  margin-top: 5px;
+}
