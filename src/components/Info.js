@@ -27,16 +27,32 @@ class Info extends Component {
         <button className="btn btn-info btn-block info__btn" type="button" onClick={this.handleShow}>
           How To Play
         </button>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal show={this.state.show} onHide={this.handleClose} className="info__modal">
           <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
+            <Modal.Title>
+              Game Rules
+            </Modal.Title>
           </Modal.Header>
   
-          <Modal.Body>One fine body...</Modal.Body>
+          <Modal.Body>
+            This is a Number Guessing Game with the following rules:
+            <br />
+            <br />
+            1. The machine picks a random number between 1 to 100 and keeps it hidden.
+            <br />
+            <br />
+            2. You need to guess until you can find the hidden secret number.
+            <br />
+            <br />
+            3. You will get feedback on how close or far your guess is in the form of the following keywords ("cold", "warm", "hot", "very hot").
+            <br />
+            <br />
+            Everything clear?
+          </Modal.Body>
   
           <Modal.Footer>
             <Button onClick={this.handleClose}>
-              Close
+              YES
             </Button>
           </Modal.Footer>
         </Modal>
