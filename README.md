@@ -5,3 +5,6 @@ The user can track his progress because previous attempts are available.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Link to App
+[https://ispoljari.github.io/react-hot-cold-app/](https://ispoljari.github.io/react-hot-cold-app/)
+
