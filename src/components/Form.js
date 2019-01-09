@@ -14,9 +14,11 @@ const Form = ({block, returnGuessToApp}) => {
   }
   
   return (
-    <form className="text-center form-game" onSubmit={e => onSubmit(e)}>
+    <form className="text-center form-game" onSubmit={onSubmit}>
       <input className="form-control text-center form-game__input" type="number" name="guess" min="1" max="100" placeholder="Enter your guess" required/>
-      <button className="btn btn-primary btn-block form-game__btn"type="submit">Guess</button>
+      <button className="btn btn-primary btn-block form-game__btn"type="submit">
+        Guess
+      </button>
     </form>
   );
 }
