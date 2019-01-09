@@ -10,16 +10,19 @@ import Author from './components/Author';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      actual: this.generateRandomNumber(),
-      guess: undefined,
-      allGuesses: [],
-      attempt: 0,
-      feedback: 'Waiting...',
-      block: false
-    }
+  state = {
+    actual: undefined,
+    guess: undefined,
+    allGuesses: [],
+    attempt: 0,
+    feedback: 'Waiting...',
+    block: false
+  }
+
+  componentWillMount = () => {
+    this.setState({
+      actual: this.generateRandomNumber()
+    });
   }
 
   generateRandomNumber = () => Math.floor(Math.random()*100) + 1;
