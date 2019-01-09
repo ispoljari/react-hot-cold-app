@@ -44,7 +44,7 @@ class Info extends Component {
             2. You need to guess until you can find the hidden secret number.
             <br />
             <br />
-            3. You will get feedback on how close or far your guess is in the form of the following keywords ("cold", "warm", "hot", "very hot").
+            3. You will get feedback on how close or far your guess is in the form of the following keywords ("cold", "warm", "hot", "extremely hot").
             <br />
             <br />
             Everything clear?
