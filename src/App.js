@@ -28,46 +28,36 @@ class App extends Component {
 
   generateRandomNumber = () => Math.floor(Math.random()*100) + 1;
 
-  updateGuess = guess => {
-    this.setState({
-      guess,
-      allGuesses: [...this.state.allGuesses, guess],
-      attempt: this.state.attempt + 1
-    }, () => {
-      this.updateFeedback();
-    }); 
-  }
-
   resetGame = () => {
     this.setState(this.getInitialState());
   }
 
-  blockGame = () => {
-    this.setState({
-      block: true
-    });
+  updateAppState = guess => {
+    const absDiff = Math.abs(guess - this.state.actual)
+    const feedbackString = this.getFeedback(absDiff);
+
+    this.setState(prevState => ({
+        guess,
+        allGuesses: [...prevState.allGuesses, guess],
+        attempt: prevState.attempt + 1,
+        feedback: feedbackString,
+        block: absDiff === 0 ? true : false
+      })
+    ); 
   }
 
-  updateFeedback = () => {
-    const absDiff = Math.abs(this.state.guess - this.state.actual)
-    let feedbackString;
-
+  getFeedback = absDiff => {
     if (absDiff === 0) {
-      feedbackString = 'You Won! Reset the game to play again.';
-      this.blockGame();
+      return 'You Won! Reset the game to play again.';
     } else if (absDiff < 4 && absDiff !== 0) {
-      feedbackString = 'Extremely Hot!';
+      return 'Extremely Hot!';
     } else if (absDiff >= 4 && absDiff < 10) {
-      feedbackString = 'Hot';
+      return 'Hot';
     } else if (absDiff >= 10 && absDiff < 20) {
-      feedbackString = 'Warm';
+      return 'Warm';
     } else {
-      feedbackString = 'Cold';
+      return 'Cold';
     } 
-
-    this.setState({
-      feedback: feedbackString
-    });
   }
 
   render() {
@@ -86,7 +76,7 @@ class App extends Component {
             </header>
             <main role="main">
               <Feedback feedback={this.state.feedback}/>
-              <Form block = {this.state.block} returnGuessToApp={value => this.updateGuess(value)}/>
+              <Form block = {this.state.block} returnGuessToApp={value => this.updateAppState(value)}/>
               <Progress attempt={this.state.attempt} guess={this.state.guess} guessList={guessList}/>
               <Reset resetGame = {this.resetGame}/>
               <Info />
