@@ -1,15 +1,15 @@
 import React from 'react';
 import './Form.css'
 
-const Form = props => {
+const Form = ({block, returnGuessToApp}) => {
   const onSubmit = e => {
     e.preventDefault();
 
-    if (!props.block) {
+    if (!block) {
       const guess = e.target.elements.guess.value;
       e.target.elements.guess.value = ''; // Clear input field after submit
   
-      props.returnGuessToApp(guess);
+      returnGuessToApp(guess);
     }
   }
   
