@@ -10,10 +10,7 @@ import Author from './components/Author';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = this.getInitialState();
-  }
+  generateRandomNumber = () => Math.floor(Math.random()*100) + 1;
 
   getInitialState = () => {
     return {
@@ -25,8 +22,8 @@ class App extends Component {
       block: false
     }
   }
-
-  generateRandomNumber = () => Math.floor(Math.random()*100) + 1;
+  
+  state = this.getInitialState();
 
   resetGame = () => {
     this.setState(this.getInitialState());
