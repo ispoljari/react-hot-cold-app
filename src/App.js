@@ -21,7 +21,7 @@ class App extends Component {
       guess: undefined,
       allGuesses: [],
       attempt: 0,
-      feedback: 'Waiting...',
+      feedbackMessage: 'Waiting...',
       block: false
     }
   }
@@ -34,36 +34,49 @@ class App extends Component {
 
   updateAppState = guess => {
     const absDiff = Math.abs(guess - this.state.actual)
-    const feedbackString = this.getFeedback(absDiff);
+    const {feedbackMessage, feedbackColor} = this.getFeedback(absDiff);
 
     this.setState(prevState => ({
         guess,
-        allGuesses: [...prevState.allGuesses, guess],
+        allGuesses: [...prevState.allGuesses, {guess, feedbackColor}],
         attempt: prevState.attempt + 1,
-        feedback: feedbackString,
+        feedbackMessage,
         block: absDiff === 0 ? true : false
       })
     ); 
   }
 
   getFeedback = absDiff => {
+    let feedbackMessage;
+    let feedbackColor;
+
     if (absDiff === 0) {
-      return 'You Won! Reset the game to play again.';
+      feedbackColor= '#000';
+      feedbackMessage = 'You Won! Reset the game to play again.';
     } else if (absDiff < 4 && absDiff !== 0) {
-      return 'Extremely Hot!';
+      feedbackColor= '#ff5722';
+      feedbackMessage = 'Extremely Hot!';
     } else if (absDiff >= 4 && absDiff < 10) {
-      return 'Hot';
+      feedbackColor= '#ff9800';
+      feedbackMessage = 'Hot';
     } else if (absDiff >= 10 && absDiff < 20) {
-      return 'Warm';
+      feedbackColor= '#ffeb38';
+      feedbackMessage = 'Warm';
     } else {
-      return 'Cold';
+      feedbackColor= '#5bc0de';
+      feedbackMessage = 'Cold';
     } 
+
+    return {
+      feedbackMessage,
+      feedbackColor
+    }
   }
 
   render() {
-    const guessList = this.state.allGuesses.map((guess, index) => 
-      <li key={index} className={`guess-${index}`}>
-        <span>{guess}</span>
+    const guessList = this.state.allGuesses.map((item, index) => 
+      <li key={index} className={`guess-${index}`} style={{backgroundColor: item.feedbackColor}}>
+        <span>{item.guess}</span>
       </li>
     );
 
@@ -75,7 +88,7 @@ class App extends Component {
               <Banner />
             </header>
             <main role="main">
-              <Feedback feedback={this.state.feedback}/>
+              <Feedback feedback={this.state.feedbackMessage}/>
               <Form block = {this.state.block} returnGuessToApp={value => this.updateAppState(value)}/>
               <Progress attempt={this.state.attempt} guess={this.state.guess} guessList={guessList}/>
               <Reset resetGame = {this.resetGame}/>
