@@ -10,19 +10,20 @@ import Author from './components/Author';
 import './App.css';
 
 class App extends Component {
-  state = {
-    actual: undefined,
-    guess: undefined,
-    allGuesses: [],
-    attempt: 0,
-    feedback: 'Waiting...',
-    block: false
+  constructor(props) {
+    super(props);
+    this.state = this.getInitialState();
   }
 
-  componentWillMount = () => {
-    this.setState({
-      actual: this.generateRandomNumber()
-    });
+  getInitialState = () => {
+    return {
+      actual: this.generateRandomNumber(),
+      guess: undefined,
+      allGuesses: [],
+      attempt: 0,
+      feedback: 'Waiting...',
+      block: false
+    }
   }
 
   generateRandomNumber = () => Math.floor(Math.random()*100) + 1;
@@ -38,14 +39,7 @@ class App extends Component {
   }
 
   resetGame = () => {
-    this.setState({
-      actual: this.generateRandomNumber(),
-      guess: undefined,
-      allGuesses: [],
-      attempt: 0,
-      feedback: 'Waiting...',
-      block: false
-    });
+    this.setState(this.getInitialState());
   }
 
   blockGame = () => {
