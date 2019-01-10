@@ -9,9 +9,21 @@ describe('<Progress />', () => {
   });
 
   // check props
-  it('Receives the correct values of props', () => {
-    const wrapper = shallow(<Progress attempt='dummy-attempt' guessList='dummy-guessList'/>);
-    expect(wrapper.find('ul').text()).toEqual('dummy-guessList');
-    expect(wrapper.find('h2').text().includes('dummy-attempt')).toEqual(true);
+  it('Renders with correct props', () => {
+    const attempt = 'dummy-attempt';
+    const guessList = 'dummy-guessList';
+    const wrapper = shallow(<Progress attempt={attempt} guessList={guessList}/>);
+
+    expect(wrapper.contains(
+      <h2 className="text-center progressBar__current">
+        Guess #{attempt}
+      </h2>))
+    .toEqual(true);
+
+    expect(wrapper.contains(
+      <ul className="progressBar__history">
+        {guessList}
+      </ul>))
+    .toEqual(true);
   });
 });
