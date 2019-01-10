@@ -13,5 +13,5 @@ describe('<Reset />', () => {
   it('onClick method receives the resetGame prop', () => {
     const wrapper = shallow(<Reset resetGame='fn'/>);
     expect(wrapper.find('button').props().onClick).toEqual('fn');
-  })
+  });
 });
