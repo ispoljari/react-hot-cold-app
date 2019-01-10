@@ -4,7 +4,14 @@ import {shallow} from 'enzyme';
 import Reset from './Reset';
 
 describe('<Reset />', () => {
-  it('Renders without chrashing', () => {
+  // smoke test
+  it('Renders without crashing', () => {
     shallow(<Reset />);
   });
+
+  // check props
+  it('onClick method receives the resetGame prop', () => {
+    const wrapper = shallow(<Reset resetGame='fn'/>);
+    expect(wrapper.find('button').props().onClick).toEqual('fn');
+  })
 });
