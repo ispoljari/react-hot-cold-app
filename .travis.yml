@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: hEDaijq4ddw8e4/vh1pTE4g21MQBNqIacr/QcMMirRmuwgfF5Gdd0tmk37TKPtzcfmtWHznQdwz88/+U0STMvXIZcCeON9YxzC/VCed6aWEegEDGMjs5dDZTP3ZBWyd6Kq2v9duT5cDhqACJjshBl8sV/W01ef2Ys7U7mZLnM5ByYZqkTJdxwCxnOBO2kgu56uUn+XOwTfuMUhjK/ShkamVWa4xY0FU2pw5TrQ7Pc4g8JqmSzaSHK2H1/RxzkmN2adj1ptyiBaKPWC3tjmU5Fko2mM6xDXiIKmfjLFfq4BB9UiU1Cup5z0PAyGqVtxHPWx80L1rsu8mmP+2Juigx3RSvR20Ue81Y7uRvlNo6w7Sk1VAcGetjUL5B7hvt4pllzaaXPPZBxnxk6Uo/5tnP9SZxnUclM2YtN4bSgb0dyZZn5UpY+rJ8m0fqFZD2OmpAEo37kiRTpb6g0QEDwkEcZ0YTmZ3wS3IaPdfwdiP62sDvnG9ajDhBxN0CRmQIUvTTwRiNpT+tX57j34a7+c4GnYGsKgVpZV6jONgz8yrkSLNmLPGkAqX2njzY+Yg9Oy+qcM961wX+sNo61r0NFWAKj0RF6lL+RDFkIVzZhE5hPsU6/f4verukrj552k+M78EQrzgWYZ/T6RQDe/dMt4gEC/dQqaSvyDg+RibCLIkqNHE=
+  app: secret-earth-13004
+  on:
+    repo: ispoljari/react-hot-cold-app
