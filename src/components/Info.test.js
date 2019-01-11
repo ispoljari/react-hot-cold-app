@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount, ReactWrapper} from 'enzyme';
 
 import Info from './Info';
 
@@ -9,7 +9,7 @@ describe('<Info />', () => {
     shallow(<Info />);
   });
 
-  // check if handleShow gets called on btn click
+  // should call handle show on btn click
   it('Should call handleShow on btn click and change state', () => {
     const wrapper = shallow(<Info />);
     expect(wrapper.state('show')).toBe(false);
@@ -17,5 +17,15 @@ describe('<Info />', () => {
       preventDefault() {}
     });
     expect(wrapper.state('show')).toBe(true);
+  });
+
+  // check if handleClose functions properly
+  it('Should call handleShow on btn click and change state', () => {
+    const wrapper = shallow(<Info />);
+    expect(wrapper.state('show')).toBe(false);
+    wrapper.instance().handleShow();
+    expect(wrapper.state('show')).toBe(true);
+    wrapper.instance().handleClose();
+    expect(wrapper.state('show')).toBe(false);
   });
 });
