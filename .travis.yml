@@ -12,3 +12,6 @@ deploy:
   app: secret-earth-13004
   on:
     repo: ispoljari/react-hot-cold-app
+branches:
+  only:
+  - master
