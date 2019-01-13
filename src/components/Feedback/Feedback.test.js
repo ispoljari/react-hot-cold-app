@@ -1,11 +1,11 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import Banner from '../Banner/Banner';
+import Feedback from './Feedback';
 
-describe('Banner />', () => {
+describe('<Feedback />', () => {
   // smoke test
   it('Renders without crashing', () => {
-    shallow(<Banner />);
+    shallow(<Feedback />);
   });
 });

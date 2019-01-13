@@ -1,11 +1,11 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import Form from '../Form/Form';
+import Author from './Author';
 
-describe('<Form />', () => {
+describe('Author />', () => {
   // smoke test
   it('Renders without crashing', () => {
-    shallow(<Form />);
+    shallow(<Author />);
   });
 });

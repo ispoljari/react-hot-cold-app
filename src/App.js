@@ -1,30 +1,18 @@
 import React, { Component } from 'react';
 import { Banner, Feedback, Form, Progress, Reset, Info, Author } from './components';
+import { getInitialState, getFeedback } from './util';
 
 import './App.css';
 
-class App extends Component {
-  generateRandomNumber = () => Math.floor(Math.random()*100) + 1;
+class App extends Component { 
+  state = getInitialState();
 
-  getInitialState = () => {
-    return {
-      actual: this.generateRandomNumber(),
-      guess: undefined,
-      allGuesses: [],
-      attempt: 0,
-      feedbackMessage: 'Waiting...',
-      block: false
-    }
-  }
-  
-  state = this.getInitialState();
-
-  resetGame = () => this.setState(this.getInitialState());
-
+  resetGame = () => this.setState(getInitialState());
 
   updateAppState = guess => {
-    const absDiff = Math.abs(guess - this.state.actual)
-    const {feedbackMessage, feedbackColor} = this.getFeedback(absDiff);
+    const { actual } = this.state;
+    const absDiff = Math.abs(guess - actual);
+    const { feedbackMessage, feedbackColor } = getFeedback(absDiff);
 
     this.setState(prevState => ({
         guess,
@@ -34,33 +22,6 @@ class App extends Component {
         block: absDiff === 0
       })
     ); 
-  }
-
-  getFeedback = absDiff => {
-    let feedbackMessage;
-    let feedbackColor;
-
-    if (absDiff === 0) {
-      feedbackColor= '#000';
-      feedbackMessage = 'You Won! Reset the game to play again.';
-    } else if (absDiff < 4 && absDiff !== 0) {
-      feedbackColor= '#ff5722';
-      feedbackMessage = 'Extremely Hot!';
-    } else if (absDiff >= 4 && absDiff < 10) {
-      feedbackColor= '#ff9800';
-      feedbackMessage = 'Hot';
-    } else if (absDiff >= 10 && absDiff < 20) {
-      feedbackColor= '#ffeb38';
-      feedbackMessage = 'Warm';
-    } else {
-      feedbackColor= '#5bc0de';
-      feedbackMessage = 'Cold';
-    } 
-
-    return {
-      feedbackMessage,
-      feedbackColor
-    }
   }
 
   render() {
