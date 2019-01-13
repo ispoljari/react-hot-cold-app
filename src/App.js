@@ -19,9 +19,8 @@ class App extends Component {
   
   state = this.getInitialState();
 
-  resetGame = () => {
-    this.setState(this.getInitialState());
-  }
+  resetGame = () => this.setState(this.getInitialState());
+
 
   updateAppState = guess => {
     const absDiff = Math.abs(guess - this.state.actual)
@@ -32,7 +31,7 @@ class App extends Component {
         allGuesses: [...prevState.allGuesses, {guess, feedbackColor}],
         attempt: prevState.attempt + 1,
         feedbackMessage,
-        block: absDiff === 0 ? true : false
+        block: absDiff === 0
       })
     ); 
   }
@@ -66,7 +65,7 @@ class App extends Component {
 
   render() {
     const guessList = this.state.allGuesses.map((item, index) => 
-      <li key={index} className={`guess-${index}`} style={{backgroundColor: item.feedbackColor}}>
+      <li key={index} style={{backgroundColor: item.feedbackColor}}>
         <span>{item.guess}</span>
       </li>
     );
