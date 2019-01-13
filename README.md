@@ -7,9 +7,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Link to App
 
-### Hosted on GitHub:
-[https://ispoljari.github.io/react-hot-cold-app/](https://ispoljari.github.io/react-hot-cold-app/)
-
 ### Hosted on Heroku:
 [https://secret-earth-13004.herokuapp.com/](https://secret-earth-13004.herokuapp.com/)
 
