@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import Form from '../Form';
+import Form from '../Form/Form';
 
 describe('<Form />', () => {
   // smoke test

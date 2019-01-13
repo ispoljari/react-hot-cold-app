@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import Banner from './components/Banner';
-import Feedback from './components/Feedback';
-import Form from './components/Form';
-import Progress from './components/Progress';
-import Reset from './components/Reset';
-import Info from './components/Info';
-import Author from './components/Author';
+import { Banner, Feedback, Form, Progress, Reset, Info, Author } from './components';
 
 import './App.css';
 
