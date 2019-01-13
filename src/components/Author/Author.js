@@ -1,6 +1,6 @@
 import React from 'react';
-import linkedinLogo from '../svg/linkedin.svg';
-import githubLogo from '../svg/github.svg';
+import linkedinLogo from '../../svg/linkedin.svg';
+import githubLogo from '../../svg/github.svg';
 import './Author.css';
 
 const Author = () => (
