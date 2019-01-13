@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import Reset from './Reset';
+import Reset from '../Reset';
 
 describe('<Reset />', () => {
   // smoke test

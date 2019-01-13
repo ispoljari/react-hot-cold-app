@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount, ReactWrapper} from 'enzyme';
 
-import Info from './Info';
+import Info from '../Info';
 
 describe('<Info />', () => {
   // smoke test
