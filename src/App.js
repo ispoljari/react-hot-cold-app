@@ -12,10 +12,6 @@ const StyledHeader = styled.div`
 const StyledMain = styled(StyledHeader)``;
 const StyledFooter = styled(StyledHeader)``;
 
-const StyledRow = styled(Row)`
-  margin-top: 20px;
-`;
-
 class App extends Component { 
   state = getInitialState();
 
@@ -46,15 +42,15 @@ class App extends Component {
     );
 
     return (
-      <Grid >
-        <StyledRow>
+      <Grid mt={20}>
+        <Row>
           <Col>
             <StyledHeader as="header" role="banner">
               <Banner />
             </StyledHeader>
           </Col>
-        </StyledRow>
-        <StyledRow>
+        </Row>
+        <Row mt={20}>
           <Col>
             <StyledMain as="main" role="main">
               <Feedback feedback={feedbackMessage}/>
@@ -64,14 +60,14 @@ class App extends Component {
               <Info />
             </StyledMain>
           </Col>
-        </StyledRow>
-        <StyledRow>
+        </Row>
+        <Row mt={20}>
           <Col>
             <StyledFooter as="footer" role="contentinfo">
               <Author />
             </StyledFooter>
           </Col>
-        </StyledRow>
+        </Row>
       </Grid>
     );
   }
