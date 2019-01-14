@@ -1,5 +1,11 @@
 import React from 'react';
-import './Form.css'
+import styled from 'styled-components';
+import { Input } from '@smooth-ui/core-sc';
+import './Form.css';
+
+const StyledForm = styled.form`
+  margin-top: 10px;
+`;
 
 const Form = ({block, returnGuessToApp}) => {
   const onSubmit = e => {
@@ -14,12 +20,12 @@ const Form = ({block, returnGuessToApp}) => {
   }
   
   return (
-    <form className="text-center form-game" onSubmit={onSubmit}>
-      <input className="form-control text-center form-game__input" type="number" name="guess" min="1" max="100" placeholder="Enter your guess" required/>
+    <StyledForm onSubmit={onSubmit}>
+      <Input control type="number" textAlign="center" fontSize={22} minHeight={40} name="guess" min="1" max="100" placeholder="Enter your guess" required/>
       <button className="btn btn-primary btn-block form-game__btn"type="submit">
         Guess
       </button>
-    </form>
+    </StyledForm>
   );
 }
 
