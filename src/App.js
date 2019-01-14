@@ -25,7 +25,9 @@ class App extends Component {
   }
 
   render() {
-    const guessList = this.state.allGuesses.map((item, index) => 
+    const { allGuesses, feedbackMessage, block, attempt, guess } = this.state;
+
+    const guessList = allGuesses.map((item, index) => 
       <li key={index} style={{backgroundColor: item.feedbackColor}}>
         <span>{item.guess}</span>
       </li>
@@ -39,9 +41,9 @@ class App extends Component {
               <Banner />
             </header>
             <main role="main">
-              <Feedback feedback={this.state.feedbackMessage}/>
-              <Form block = {this.state.block} returnGuessToApp={value => this.updateAppState(value)}/>
-              <Progress attempt={this.state.attempt} guess={this.state.guess} guessList={guessList}/>
+              <Feedback feedback={feedbackMessage}/>
+              <Form block = {block} returnGuessToApp={value => this.updateAppState(value)}/>
+              <Progress attempt={attempt} guess={guess} guessList={guessList}/>
               <Reset resetGame = {this.resetGame}/>
               <Info />
             </main>
