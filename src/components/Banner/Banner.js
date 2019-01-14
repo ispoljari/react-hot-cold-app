@@ -1,8 +1,8 @@
 import React from 'react';
-import './Banner.css';
+import { Typography } from '@smooth-ui/core-sc';
 
 const Banner = () => (
-  <h1 className="text-center banner">HOT or COLD</h1>
+  <Typography variant="h1" textAlign="center" style={{margin: "0"}}>HOT or COLD</Typography>
 );
 
 export default Banner;

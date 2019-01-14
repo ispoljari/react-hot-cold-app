@@ -9,16 +9,12 @@ const StyledHeader = styled.div`
   max-width: 380px;
   margin: 0 auto;
 `;
+const StyledMain = styled(StyledHeader)``;
+const StyledFooter = styled(StyledHeader)``;
 
-const StyledMain = styled(StyledHeader)`
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 4px;
-`;
-
-const StyledFooter = styled.footer`
+const StyledRow = styled(Row)`
   margin-top: 20px;
-`
+`;
 
 class App extends Component { 
   state = getInitialState();
@@ -51,14 +47,14 @@ class App extends Component {
 
     return (
       <Grid >
-        <Row >
+        <StyledRow>
           <Col>
             <StyledHeader as="header" role="banner">
               <Banner />
             </StyledHeader>
           </Col>
-        </Row>
-        <Row>
+        </StyledRow>
+        <StyledRow>
           <Col>
             <StyledMain as="main" role="main">
               <Feedback feedback={feedbackMessage}/>
@@ -68,14 +64,14 @@ class App extends Component {
               <Info />
             </StyledMain>
           </Col>
-        </Row>
-        <Row>
+        </StyledRow>
+        <StyledRow>
           <Col>
-            <StyledFooter role="contentinfo">
+            <StyledFooter as="footer" role="contentinfo">
               <Author />
             </StyledFooter>
           </Col>
-        </Row>
+        </StyledRow>
       </Grid>
     );
   }
