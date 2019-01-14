@@ -2,7 +2,23 @@ import React, { Component } from 'react';
 import { Banner, Feedback, Form, Progress, Reset, Info, Author } from './components';
 import { getInitialState, getFeedback } from './util';
 
-import './App.css';
+import styled from 'styled-components';
+import { Grid, Row, Col } from '@smooth-ui/core-sc';
+
+const StyledHeader = styled.div`
+  max-width: 380px;
+  margin: 0 auto;
+`;
+
+const StyledMain = styled(StyledHeader)`
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+`;
+
+const StyledFooter = styled.footer`
+  margin-top: 20px;
+`
 
 class App extends Component { 
   state = getInitialState();
@@ -34,25 +50,33 @@ class App extends Component {
     );
 
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12">
-            <header role="banner">
+      <Grid >
+        <Row >
+          <Col>
+            <StyledHeader as="header" role="banner">
               <Banner />
-            </header>
-            <main role="main">
+            </StyledHeader>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <StyledMain as="main" role="main">
               <Feedback feedback={feedbackMessage}/>
               <Form block = {block} returnGuessToApp={value => this.updateAppState(value)}/>
               <Progress attempt={attempt} guess={guess} guessList={guessList}/>
               <Reset resetGame = {this.resetGame}/>
               <Info />
-            </main>
-            <footer role="contentinfo">
+            </StyledMain>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <StyledFooter role="contentinfo">
               <Author />
-            </footer>
-          </div>
-        </div>
-      </div>
+            </StyledFooter>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }
