@@ -9,14 +9,19 @@ const Social = styled(Author)`
   margin-top: 5px;
 
   img {
-    width: 35px;
+    width: 36px;
     display: block;
   }
 `;
 
-const LinkedIn = styled.div``;
+const LinkedIn = styled.div`
+  background-color: white;
+  border-radius: 10px;
+`;
+
 const Github = styled(LinkedIn)`
   margin-left: 10px;
+  border-radius: 20px;
 `;
 
 export {
