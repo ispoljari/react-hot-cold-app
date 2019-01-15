@@ -12,8 +12,8 @@ const StyledFeedback = styled.div`
 `;
 
 const Feedback = ({feedback}) =>  (
-  <StyledFeedback className="feedback">
-    <Typography variant="h2" fontSize={22} textAlign="center" my={0} mx="auto">       {feedback}
+  <StyledFeedback>
+    <Typography variant="h2" fontSize={22} textAlign="center" my={0} mx="auto"> {feedback}
     </Typography>
   </StyledFeedback>
 );
