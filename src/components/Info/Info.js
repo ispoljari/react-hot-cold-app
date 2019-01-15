@@ -47,7 +47,7 @@ class Info extends Component {
                 </Typography>
               </ModalHeader>
       
-              <ModalBody fontSize={20}>
+              <ModalBody fontSize={20} color="black">
                 This is a Number Guessing Game with the following rules:
                 <br />
                 <br />

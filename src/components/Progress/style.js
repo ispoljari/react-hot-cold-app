@@ -5,7 +5,8 @@ const Progress = styled.div`
 `;
 const History = styled.ul`
   display: flex;
-  border: 1px solid #ccc;
+  border: 2px solid #fff;
+  background-color: white;
   border-radius: 4px;
   min-height: 30px;
   padding: 5px;
