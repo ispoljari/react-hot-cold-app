@@ -14,7 +14,6 @@ describe('<Progress />', () => {
     const guessList = 'dummy-guessList';
     const wrapper = mount(<Progress attempt={attempt} guessList={guessList}/>);
 
-    console.log(wrapper.debug());
     expect(wrapper.find('h2').contains('dummy-attempt')).toEqual(true);
 
     expect(wrapper.find('ul').contains('dummy-guessList')).toEqual(true);
