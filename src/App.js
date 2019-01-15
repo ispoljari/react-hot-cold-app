@@ -1,24 +1,10 @@
 import React, { Component } from 'react';
+
 import { Banner, Feedback, Form, Progress, Reset, Info, Author } from './components';
 import { getInitialState, getFeedback } from './util';
 
-import styled from 'styled-components';
 import { Grid, Row, Col } from '@smooth-ui/core-sc';
-
-const StyledHeader = styled.div`
-  max-width: 380px;
-  margin: 0 auto;
-`;
-const StyledMain = styled(StyledHeader)``;
-const StyledFooter = styled(StyledHeader)``;
-
-const StyledListItem = styled.li`
-  color: #fff;
-  background-color: ${props => props.color};
-  margin-right: 8px;
-  padding: 2px;
-  border-radius: 4px;
-`;
+import * as Styled from './style';
 
 class App extends Component { 
   state = getInitialState();
@@ -44,36 +30,36 @@ class App extends Component {
     const { allGuesses, feedbackMessage, block, attempt, guess } = this.state;
 
     const guessList = allGuesses.map((item, index) => 
-      <StyledListItem key={index} color={item.feedbackColor}>
+      <Styled.ListItem key={index} color={item.feedbackColor}>
         <span>{item.guess}</span>
-      </StyledListItem>
+      </Styled.ListItem>
     );
 
     return (
       <Grid mt={20}>
         <Row>
           <Col>
-            <StyledHeader as="header" role="banner">
+            <Styled.LandmarkContainer as="header" role="banner">
               <Banner />
-            </StyledHeader>
+            </Styled.LandmarkContainer>
           </Col>
         </Row>
         <Row mt={20}>
           <Col>
-            <StyledMain as="main" role="main">
+            <Styled.LandmarkContainer as="main" role="main">
               <Feedback feedback={feedbackMessage}/>
               <Form block = {block} returnGuessToApp={value => this.updateAppState(value)}/>
               <Progress attempt={attempt} guess={guess} guessList={guessList}/>
               <Reset resetGame = {this.resetGame}/>
               <Info />
-            </StyledMain>
+            </Styled.LandmarkContainer>
           </Col>
         </Row>
         <Row mt={20}>
           <Col>
-            <StyledFooter as="footer" role="contentinfo">
+            <Styled.LandmarkContainer as="footer" role="contentinfo">
               <Author />
-            </StyledFooter>
+            </Styled.LandmarkContainer>
           </Col>
         </Row>
       </Grid>
