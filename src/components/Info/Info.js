@@ -11,11 +11,7 @@ import {
   Typography
 } from '@smooth-ui/core-sc';
 
-import styled from 'styled-components';
-
-const StyledInfo = styled.div`
-  margin-top: 5px;
-`;
+import * as Styled from './style';
 
 class Info extends Component {
   state = {
@@ -37,7 +33,7 @@ class Info extends Component {
 
   render() {
     return (
-      <StyledInfo>
+      <Styled.Info>
         <Button variant="info" width={1} mt={10} minHeight={40} fontSize={22} type="button" onClick={this.handleShow}>
           How To Play
         </Button>
@@ -76,7 +72,7 @@ class Info extends Component {
             </ModalContent>
           </ModalDialog>
         </Modal>
-      </StyledInfo>
+      </Styled.Info>
     );
   }
 }
