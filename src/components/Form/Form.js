@@ -21,7 +21,7 @@ const Form = ({block, returnGuessToApp}) => {
   return (
     <StyledForm onSubmit={onSubmit}>
       <Input width={1} type="number" textAlign="center" fontSize={22} minHeight={40} name="guess" min="1" max="100" placeholder="Enter your guess" required/>
-      <Button width={1} mt={10} minHeight={40} fontSize={22} type="submit">
+      <Button variant="success" width={1} mt={10} minHeight={40} fontSize={22} type="submit">
         Guess
       </Button>
     </StyledForm>
