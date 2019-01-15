@@ -5,7 +5,8 @@ import styled from 'styled-components';
 const StyledFeedback = styled.div`
   border-radius: 5px;
   padding: 4px;
-  background-color: #ea4335;
+  background-color: #bd4932;
+  color: white;
   display: flex;
   align-items: center;
   min-height: 50px;
