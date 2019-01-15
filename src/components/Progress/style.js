@@ -9,6 +9,7 @@ const History = styled.ul`
   border-radius: 4px;
   min-height: 30px;
   padding: 5px;
+  margin: 0;
   list-style: none;
   color: black;
   font-size: 22px;

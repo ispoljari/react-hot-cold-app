@@ -34,7 +34,7 @@ class Info extends Component {
   render() {
     return (
       <Styled.Info>
-        <Button variant="info" width={1} mt={10} minHeight={40} fontSize={22} type="button" onClick={this.handleShow}>
+        <Button variant="info" width={1} minHeight={40} fontSize={22} type="button" onClick={this.handleShow}>
           How To Play
         </Button>
         <Modal opened={this.state.show} onClose={this.handleClose}>
