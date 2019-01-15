@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+
 import { Banner, Feedback, Form, Progress, Reset, Info, Author } from './components';
 import { getInitialState, getFeedback } from './util';
 
-import './App.css';
+import { Grid, Row, Col } from '@smooth-ui/core-sc';
+import * as Styled from './style';
 
 class App extends Component { 
   state = getInitialState();
@@ -28,31 +30,39 @@ class App extends Component {
     const { allGuesses, feedbackMessage, block, attempt, guess } = this.state;
 
     const guessList = allGuesses.map((item, index) => 
-      <li key={index} style={{backgroundColor: item.feedbackColor}}>
+      <Styled.ListItem key={index} color={item.feedbackColor}>
         <span>{item.guess}</span>
-      </li>
+      </Styled.ListItem>
     );
 
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12">
-            <header role="banner">
+      <Grid mt={20}>
+        <Row>
+          <Col>
+            <Styled.LandmarkContainer as="header" role="banner">
               <Banner />
-            </header>
-            <main role="main">
+            </Styled.LandmarkContainer>
+          </Col>
+        </Row>
+        <Row mt={10}>
+          <Col>
+            <Styled.LandmarkContainer as="main" role="main">
               <Feedback feedback={feedbackMessage}/>
               <Form block = {block} returnGuessToApp={value => this.updateAppState(value)}/>
               <Progress attempt={attempt} guess={guess} guessList={guessList}/>
               <Reset resetGame = {this.resetGame}/>
               <Info />
-            </main>
-            <footer role="contentinfo">
+            </Styled.LandmarkContainer>
+          </Col>
+        </Row>
+        <Row mt={15}>
+          <Col>
+            <Styled.LandmarkContainer as="footer" role="contentinfo">
               <Author />
-            </footer>
-          </div>
-        </div>
-      </div>
+            </Styled.LandmarkContainer>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }

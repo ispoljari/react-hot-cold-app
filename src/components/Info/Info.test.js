@@ -11,7 +11,7 @@ describe('<Info />', () => {
 
   // should call handle show on btn click
   it('Should call handleShow on btn click and change state', () => {
-    const wrapper = shallow(<Info />);
+    const wrapper = mount(<Info />);
     expect(wrapper.state('show')).toBe(false);
     wrapper.find('button').simulate('click', {
       preventDefault() {}
@@ -21,7 +21,7 @@ describe('<Info />', () => {
 
   // check if handleClose functions properly
   it('Should call handleShow on btn click and change state', () => {
-    const wrapper = shallow(<Info />);
+    const wrapper = mount(<Info />);
     expect(wrapper.state('show')).toBe(false);
     wrapper.instance().handleShow();
     expect(wrapper.state('show')).toBe(true);

@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+
+import * as Styled from './global-style';
+
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <React.Fragment>
+    <Styled.Global />
+    <App />
+  </React.Fragment>,
+  document.getElementById('root')
+);

@@ -1,11 +1,11 @@
 import React from 'react';
-import './Reset.css';
+import { Button } from '@smooth-ui/core-sc';
 
 const Reset = ({resetGame}) => (
-  <div className="text-center reset">
-    <button className="btn btn-success btn-block reset__btn" type="button" onClick={resetGame}>
+  <div>
+    <Button variant="danger" width={1} mt={10} minHeight={40} fontSize={22} type="button" onClick={resetGame}>
       Reset Game
-    </button>
+    </Button>
   </div>
 );
 

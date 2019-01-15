@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow, mount} from 'enzyme';
 
 import Reset from './Reset';
 
@@ -9,16 +9,10 @@ describe('<Reset />', () => {
     shallow(<Reset />);
   });
 
-  // check props
-  it('onClick method receives the resetGame prop', () => {
-    const wrapper = shallow(<Reset resetGame='fn'/>);
-    expect(wrapper.find('button').props().onClick).toEqual('fn');
-  });
-
   // check if callback gets called on click event
   it('Should call resetGame callback when button is clicked', () => {
     const callback = jest.fn();
-    const wrapper = shallow(<Reset resetGame={callback}/>);
+    const wrapper = mount(<Reset resetGame={callback}/>);
     wrapper.find('button').simulate('click', {
       preventDefault() {}
     });

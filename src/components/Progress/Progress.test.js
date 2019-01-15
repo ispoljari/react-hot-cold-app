@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Progress from './Progress';
 
 describe('<Progress />', () => {
@@ -12,18 +12,10 @@ describe('<Progress />', () => {
   it('Renders with correct props', () => {
     const attempt = 'dummy-attempt';
     const guessList = 'dummy-guessList';
-    const wrapper = shallow(<Progress attempt={attempt} guessList={guessList}/>);
+    const wrapper = mount(<Progress attempt={attempt} guessList={guessList}/>);
 
-    expect(wrapper.contains(
-      <h2 className="text-center progressBar__current">
-        Guess #{attempt}
-      </h2>))
-    .toEqual(true);
+    expect(wrapper.find('h2').contains('dummy-attempt')).toEqual(true);
 
-    expect(wrapper.contains(
-      <ul className="progressBar__history">
-        {guessList}
-      </ul>))
-    .toEqual(true);
+    expect(wrapper.find('ul').contains('dummy-guessList')).toEqual(true);
   });
 });

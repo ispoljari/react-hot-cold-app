@@ -1,13 +1,16 @@
 import React from 'react';
-import './Progress.css';
+import { Typography } from '@smooth-ui/core-sc';
+import * as Styled from './style';
 
 const Progress = ({attempt, guessList}) => (
-  <div className="progressBar">
-    <h2 className="text-center progressBar__current">Guess #{attempt}</h2>
-    <ul className="progressBar__history">
+  <Styled.Progress>
+    <Typography variant="h2" textAlign="center" >
+      Guess #{attempt}
+    </Typography>
+    <Styled.History>
       {guessList}
-    </ul>
-  </div>
+    </Styled.History>
+  </Styled.Progress>
 );
 
 export default Progress;
