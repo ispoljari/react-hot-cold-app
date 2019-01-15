@@ -4,7 +4,7 @@ import * as Styled from './style';
 
 const Progress = ({attempt, guessList}) => (
   <Styled.Progress>
-    <Typography variant="h2" textAlign="center" color="black">
+    <Typography variant="h2" textAlign="center" >
       Guess #{attempt}
     </Typography>
     <Styled.History>

@@ -44,7 +44,7 @@ class App extends Component {
             </Styled.LandmarkContainer>
           </Col>
         </Row>
-        <Row mt={20}>
+        <Row mt={10}>
           <Col>
             <Styled.LandmarkContainer as="main" role="main">
               <Feedback feedback={feedbackMessage}/>
@@ -55,7 +55,7 @@ class App extends Component {
             </Styled.LandmarkContainer>
           </Col>
         </Row>
-        <Row mt={20}>
+        <Row mt={15}>
           <Col>
             <Styled.LandmarkContainer as="footer" role="contentinfo">
               <Author />
