@@ -1,22 +1,12 @@
 import React from 'react';
 import { Typography } from '@smooth-ui/core-sc';
-import styled from 'styled-components';
-
-const StyledFeedback = styled.div`
-  border-radius: 5px;
-  padding: 4px;
-  background-color: #bd4932;
-  color: white;
-  display: flex;
-  align-items: center;
-  min-height: 50px;
-`;
+import * as Styled from './style';
 
 const Feedback = ({feedback}) =>  (
-  <StyledFeedback>
+  <Styled.Feedback>
     <Typography variant="h2" fontSize={22} textAlign="center" my={0} mx="auto"> {feedback}
     </Typography>
-  </StyledFeedback>
+  </Styled.Feedback>
 );
 
 export default Feedback;
