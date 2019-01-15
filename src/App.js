@@ -12,6 +12,14 @@ const StyledHeader = styled.div`
 const StyledMain = styled(StyledHeader)``;
 const StyledFooter = styled(StyledHeader)``;
 
+const StyledListItem = styled.li`
+  color: #fff;
+  background-color: ${props => props.color};
+  margin-right: 8px;
+  padding: 2px;
+  border-radius: 4px;
+`;
+
 class App extends Component { 
   state = getInitialState();
 
@@ -36,9 +44,9 @@ class App extends Component {
     const { allGuesses, feedbackMessage, block, attempt, guess } = this.state;
 
     const guessList = allGuesses.map((item, index) => 
-      <li key={index} style={{backgroundColor: item.feedbackColor}}>
+      <StyledListItem key={index} color={item.feedbackColor}>
         <span>{item.guess}</span>
-      </li>
+      </StyledListItem>
     );
 
     return (

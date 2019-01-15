@@ -13,14 +13,8 @@ const StyledHistory = styled.ul`
   padding: 5px;
   list-style: none;
   color: black;
-  font-size: 24px;
-
-  li {
-    color: #fff;
-    margin-right: 8px;
-    padding: 2px;
-    border-radius: 4px;
-  }
+  font-size: 22px;
+  overflow: -webkit-paged-x;
 `;
 
 const Progress = ({attempt, guessList}) => (
