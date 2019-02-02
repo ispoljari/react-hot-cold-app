@@ -1,6 +1,6 @@
 # The Hot and Cold game app
 ## LINK TO THE APP:
-[https://secret-earth-13004.herokuapp.com/](https://secret-earth-13004.herokuapp.com/)
+[https://hot-and-cold-app.netlify.com](https://hot-and-cold-app.netlify.com)
 
 ## SUMMARY
 This is a game where the user guesses a random number in the interval 1-100 set by the computer, and gets feedback in the form of the following words; cold, warm, hot, extremely hot.
