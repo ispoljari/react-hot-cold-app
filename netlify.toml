@@ -1,4 +1,0 @@
-[build]
-base = "react-hot-cold-app/"
-publish = "build/"
-command = "npm run build"
