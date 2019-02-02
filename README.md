@@ -14,8 +14,6 @@ The user can track his progress because previous attempts are available.
 
 **TESTING**: ENZYME (a few component unit tests)
 
-**CONTINUOS INTEGRATION**: TRAVISCI 
-
 **CLIENT SIDE**: HTML5, CSS3, REACT (ES6 JS)
 
 **AUTOMATION**: CREATE-REACT-APP
