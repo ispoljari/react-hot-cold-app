@@ -7,7 +7,7 @@ This is a game where the user guesses a random number in the interval 1-100 set 
 The purpose is to guess the number in as little attempts as possible.
 The user can track his progress because previous attempts are available.
 
-##IMPLEMENTATION USING REDUX
+## IMPLEMENTATION USING REDUX
 [https://github.com/ispoljari/redux-hot-cold-app](https://github.com/ispoljari/redux-hot-cold-app)
 
 ## DEMO VIDEO
